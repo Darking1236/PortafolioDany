@@ -1,0 +1,98 @@
+---
+---
+<header >
+    <nav  aria-label="Barra de navegación principal">
+        <div class="logo">
+            <span><a href="/">DanyDev</a></span>
+        </div>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <ul class="content-bar">
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Portafolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Tutoriales</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<style>
+
+.logo{
+  font-weight: bold;
+  font-size: 1.2em; 
+}
+
+.content-bar{
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+    }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+nav{
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #13161C;
+    position:relative;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.2s linear;
+    display: inline-block; 
+}
+
+a:hover{
+  transform: scale(1.1);
+  background-color: #1752c7;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+
+  .content-bar {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: #13161C;
+    width: 100%;
+    padding: 1rem 0;
+    display: none; /* Oculto por defecto */
+  }
+
+  .content-bar.active {
+    display: flex;
+  }
+
+  .content-bar li {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  nav{
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+}
+
+</style>
