@@ -1,1 +1,51 @@
-<p>Soy el footer</p>
+---
+import { Icon } from 'astro-icon/components'
+---
+<footer>
+    <div  class="cont-social-media">
+        
+        <ul>
+            <li><a href="#"><Icon name="mdi:github" width="24" height="24" /></a></li>
+            <li><a href="#"><Icon name="mdi:linkedin" width="24" height="24" /></a></li>
+            <li><a href="#"><Icon name="mdi:instagram" width="24" height="24" /></a></li>
+        </ul>
+    </div>
+    <div class="cont-politics">
+        <p>© 2025 DanyDev </p>
+        <span><a href="#">Politica de privacidad</a></span>
+        <span><a href="#">Contáctanos</a></span>
+    </div>
+</footer>
+
+
+
+<style>
+    footer{
+        background-color: #13161C;
+        color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding:  2rem;
+        gap: 2rem;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    .cont-social-media ul{
+        display: flex;
+        gap: 2rem;
+    }
+    .cont-politics{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cont-politics a:hover{
+        text-decoration:underline;
+    }
+</style>

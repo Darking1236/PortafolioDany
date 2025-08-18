@@ -1,26 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import SecPostHome from '../components/SecPostHome.astro';
-import astroLogo from '../assets/favicon.svg'
+import Welcome from '@components/Welcome.astro';
+import Layout from '@layouts/Layout.astro';
+import SecPostHome from '@components/SecPostHome.astro';
+import HTBImg from '@assets/HTB.png';
+import GitLogo from '@assets/GitHub-Logo.png'
 const posts = [
     {
         title: "Post de prueba1",
         description: "Descripcion de prueba1",
-        tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+        tags: ["HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad"],
+		img: HTBImg.src
     },
     {
         title: "Post de prueba2",
         description: "Descripcion de prueba2",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+		img: HTBImg.src
     },
     {
         title: "Post de prueba3",
         description: "Descripcion de prueba3",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+		img: HTBImg.src
     }
 ];
 const proyectos = [
@@ -28,30 +29,30 @@ const proyectos = [
         title: "Proyecto de prueba1",
         description: "Descripcion de prueba1",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+		img: GitLogo.src
     },
     {
         title: "Proyecto de prueba2",
         description: "Descripcion de prueba2",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+		img: GitLogo.src
     },
     {
         title: "Proyecto de prueba3",
         description: "Descripcion de prueba3",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: astroLogo.src
+		img: GitLogo.src
     }
 ];
 
 const colorSecBlog = "#13161C";
-const colorSecPortafolio = "#3EE0F5";
+const colorSecPortafolio = "#1752c7";
 
 const colorSecBlogText = "#ffff";
-const colorSecPortafolioText = "#000000";
+const colorSecPortafolioText = "#ffff";
 ---
 
-<Layout>
+<Layout pageTitle = "DanyDev">
 	<Welcome />
 	<SecPostHome title="Ultimos posts" posts={posts} color={colorSecBlog}  colorText={colorSecBlogText}/>
 	<SecPostHome title="Portafolio" posts={proyectos} color={colorSecPortafolio} colorText={colorSecPortafolioText}/>
