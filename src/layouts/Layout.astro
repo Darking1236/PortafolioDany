@@ -1,7 +1,8 @@
 ---
-import '../styles/global.css'
-import NavBar from "../components/NavBar.astro";
-import Footer from "../components/Footer.astro";
+import '@globalCSS/global.css'
+import NavBar from "@components/NavBar.astro";
+import Footer from "@components/Footer.astro";
+const {pageTitle} = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +11,7 @@ import Footer from "../components/Footer.astro";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<main>

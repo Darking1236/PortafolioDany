@@ -1,5 +1,5 @@
 ---
-import TagsPost from "./TagsPost.astro";
+import TagsPost from "@components/TagsPost.astro";
 const {title,description,tags,img} = Astro.props; 
 ---
 <div class="card-blog">
@@ -17,7 +17,7 @@ const {title,description,tags,img} = Astro.props;
 
 <style>
     .card-blog{
-    background-color: #2251ad;
+    background-color: #f6f6f7;
     color: #ffff;
     height: auto;
     max-width: 300px;
@@ -29,6 +29,7 @@ const {title,description,tags,img} = Astro.props;
 }
 
 .cont-name-desc-blog{
+    flex-grow: 1;
      background-color: rgb(0, 0, 0);
      padding: 1rem;
      border-radius: 0 0 5px 5px;
@@ -43,7 +44,7 @@ const {title,description,tags,img} = Astro.props;
 }
 
  .cont-img-blog {
-        flex-grow: 1; 
+        max-height: 250px;
         display: flex;
         justify-content: center;
         align-items: center; 

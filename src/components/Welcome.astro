@@ -35,15 +35,24 @@
     height: 40px;
     background-color: #13161C;
     border: none;
-    color:#ffff;
     border-radius: 5px;
-    transition: background-color 0.5s ease;
-    text-decoration: none;
+    transition: background-color 0.5s ease,transform 0.5s linear;
     align-content: center;
 }
 
 .btn:hover{
-     background-color: #13161cef;
+     background-color: #13161cc2;
+     transform: scale(1.1);
      cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+    
+    p{
+        font-size: 1.2rem;
+    }
 }
 </style>
