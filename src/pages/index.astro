@@ -9,39 +9,87 @@ const posts = [
         title: "Post de prueba1",
         description: "Descripcion de prueba1",
         tags: ["HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad"],
-		img: HTBImg.src
+		img: HTBImg.src,
+        date: '08-05-2025'
     },
     {
         title: "Post de prueba2",
         description: "Descripcion de prueba2",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: HTBImg.src
+		img: HTBImg.src,
+        date: '08-06-2025'
     },
     {
         title: "Post de prueba3",
         description: "Descripcion de prueba3",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: HTBImg.src
+		img: HTBImg.src,
+        date: '08-04-2025'
+    },
+      {
+        title: "Post de prueba4",
+        description: "Descripcion de prueba1",
+        tags: ["HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad","HackTheBox","Ciberseguridad"],
+		img: HTBImg.src,
+        date: '08-03-2025'
+    },
+    {
+        title: "Post de prueba5",
+        description: "Descripcion de prueba2",
+        tags: ["HackTheBox","Ciberseguridad"],
+		img: HTBImg.src,
+        date: '08-02-2025'
+    },
+    {
+        title: "Post de prueba6",
+        description: "Descripcion de prueba3",
+        tags: ["HackTheBox","Ciberseguridad"],
+		img: HTBImg.src,
+        date: '08-15-2025'
     }
 ];
-const proyectos = [
+const projects = [
     {
         title: "Proyecto de prueba1",
         description: "Descripcion de prueba1",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: GitLogo.src
+		img: GitLogo.src,
+        date: '08-05-2025'
     },
     {
         title: "Proyecto de prueba2",
         description: "Descripcion de prueba2",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: GitLogo.src
+		img: GitLogo.src,
+        date: '08-06-2025'
     },
     {
         title: "Proyecto de prueba3",
         description: "Descripcion de prueba3",
         tags: ["HackTheBox","Ciberseguridad"],
-		img: GitLogo.src
+		img: GitLogo.src,
+        date: '08-07-2025'
+    },
+       {
+        title: "Proyecto de prueba4",
+        description: "Descripcion de prueba1",
+        tags: ["HackTheBox","Ciberseguridad"],
+		img: GitLogo.src,
+        date: '08-04-2025'
+    },
+    {
+        title: "Proyecto de prueba5",
+        description: "Descripcion de prueba2",
+        tags: ["HackTheBox","Ciberseguridad"],
+		img: GitLogo.src,
+        date: '08-02-2025'
+    },
+    {
+        title: "Proyecto de prueba6",
+        description: "Descripcion de prueba3",
+        tags: ["HackTheBox","Ciberseguridad"],
+		img: GitLogo.src,
+        date: '08-23-2025'
     }
 ];
 
@@ -50,10 +98,16 @@ const colorSecPortafolio = "#1752c7";
 
 const colorSecBlogText = "#ffff";
 const colorSecPortafolioText = "#ffff";
+const filteredPosts = posts.sort((a,b)=>{
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+}).slice(posts.length - 3, posts.length);
+const filteredProjects = projects.sort((a,b)=>{
+    return new Date(a.date).getTime() - new Date(b.date).getTime();
+}).slice(projects.length - 3, projects.length);
 ---
 
 <Layout pageTitle = "DanyDev">
 	<Welcome />
-	<SecPostHome title="Ultimos posts" posts={posts} color={colorSecBlog}  colorText={colorSecBlogText}/>
-	<SecPostHome title="Portafolio" posts={proyectos} color={colorSecPortafolio} colorText={colorSecPortafolioText}/>
+	<SecPostHome title="Ultimos posts" posts={filteredPosts} color={colorSecBlog}  colorText={colorSecBlogText}/>
+	<SecPostHome title="Portafolio" posts={filteredProjects} color={colorSecPortafolio} colorText={colorSecPortafolioText}/>
 </Layout>
