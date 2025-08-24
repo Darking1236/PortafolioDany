@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import SecPostHome from '@components/SecPostHome.astro';
 import HTBImg from '@assets/HTB.png';
 import GitLogo from '@assets/GitHub-Logo.png'
+import {lastFilterPosts} from '../lib/utils'
 const posts = [
     {
         title: "Post de prueba1",
@@ -92,18 +93,13 @@ const projects = [
         date: '08-23-2025'
     }
 ];
-
 const colorSecBlog = "#13161C";
 const colorSecPortafolio = "#1752c7";
-
 const colorSecBlogText = "#ffff";
 const colorSecPortafolioText = "#ffff";
-const filteredPosts = posts.sort((a,b)=>{
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
-}).slice(posts.length - 3, posts.length);
-const filteredProjects = projects.sort((a,b)=>{
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
-}).slice(projects.length - 3, projects.length);
+
+const filteredPosts = lastFilterPosts(posts);
+const filteredProjects = lastFilterPosts(projects)
 ---
 
 <Layout pageTitle = "DanyDev">
